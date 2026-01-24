@@ -14,14 +14,13 @@ Maastricht University
 January 2026
 
 PREPARED BY:
-Alisa Ovsiannikova i6365923,
-Tijn Saes i6344387,
-Csaba Kelemen i6305543,
-Nienke Wibbelink i6358957
+Alisa Ovsiannikova,
+Tijn Saes,
+Csaba Kelemen,
+Nienke Wibbelink
 
 SUPERVISED BY:
-Dr. Sheng Kuang,
-Dr. Zohaib Salahuddin
+Sheng Kuang
 
 -----------------------------------------------------------------------------------------------------------------
 
