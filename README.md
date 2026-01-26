@@ -33,8 +33,8 @@ Lung cancer is one of the leading causes of cancer-related deaths worldwide, lar
 This project investigates how recent advances in artificial intelligence—specifically medical imaging foundation models—can be applied to lung nodule malignancy prediction. Instead of training a model from scratch, we build on a large pre-trained model developed by the AIM-Harvard group and adapt it to a focused clinical task using the LUNA16 dataset. The aim is to evaluate how well these general-purpose medical image representations transfer to a specific, real-world problem.
 
 ⸻
-**
-Dataset**
+
+**Dataset**
 
 We use the LUNA16 dataset, a widely used benchmark derived from the LIDC-IDRI database. It contains chest CT scans with annotated lung nodules. Importantly, malignancy labels are not directly included in LUNA16; instead, they are derived from the original LIDC-IDRI annotations, where multiple radiologists assign malignancy scores to each nodule. These scores are processed to obtain binary malignancy labels for this project.
 
