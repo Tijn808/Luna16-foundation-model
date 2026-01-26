@@ -24,7 +24,48 @@ Sheng Kuang
 
 -----------------------------------------------------------------------------------------------------------------
 
-**introduction** 
+# Lung Nodule Malignancy Prediction with Foundation Models
+
+**Project Overview**
+
+Lung cancer is one of the leading causes of cancer-related deaths worldwide, largely because it is often detected at a late stage. CT scans are commonly used to identify lung nodules that may indicate cancer, but determining whether a nodule is benign or malignant remains a challenging task and requires expert interpretation.
+
+This project investigates how recent advances in artificial intelligence—specifically medical imaging foundation models—can be applied to lung nodule malignancy prediction. Instead of training a model from scratch, we build on a large pre-trained model developed by the AIM-Harvard group and adapt it to a focused clinical task using the LUNA16 dataset. The aim is to evaluate how well these general-purpose medical image representations transfer to a specific, real-world problem.
+
+⸻
+**
+Dataset**
+
+We use the LUNA16 dataset, a widely used benchmark derived from the LIDC-IDRI database. It contains chest CT scans with annotated lung nodules. Importantly, malignancy labels are not directly included in LUNA16; instead, they are derived from the original LIDC-IDRI annotations, where multiple radiologists assign malignancy scores to each nodule. These scores are processed to obtain binary malignancy labels for this project.
+
+⸻
+
+**Methods**
+
+_Preprocessing and Patch Extraction_
+
+Raw CT scans are first converted into a standardized medical imaging format and resampled to ensure consistent spatial resolution across patients. From each scan, fixed-size 3D patches centered on annotated lung nodules are extracted. These patches serve as the input to all downstream models.
+
+_Foundation Model_
+
+Each 3D patch is passed through a pre-trained medical imaging foundation model, based on a deep 3D convolutional neural network. When used in a frozen setting, the model acts purely as a feature extractor, producing a 4096-dimensional embedding for each nodule patch. These embeddings capture rich spatial and textural information learned from large-scale medical imaging data.
+
+_Downstream Models_
+
+We evaluate multiple strategies for malignancy prediction:
+	•	Logistic Regression on frozen embeddings as a simple baseline and linear evaluation method
+	•	Multi-Layer Perceptron (MLP) on frozen embeddings to model non-linear relationships
+	•	End-to-end fine-tuning, where the foundation model and MLP are trained jointly, allowing the learned features to adapt specifically to the lung nodule task
+
+_Evaluation_
+
+Models are evaluated using patient-level train–test splits to prevent data leakage. Performance is assessed using standard classification metrics, including accuracy and AUC, and validation behavior is monitored to detect overfitting and assess generalization.
+
+⸻
+
+**Goal of the Project**
+
+The goal of this project is not to replace clinical decision-making, but to study how well a general medical imaging foundation model can be adapted to a specific diagnostic task. By comparing frozen feature extraction, shallow classifiers, and end-to-end fine-tuning, we aim to better understand the strengths and limitations of foundation models in applied medical imaging.
 
 # 1. Project Overview (from Project Descriptions)
 
